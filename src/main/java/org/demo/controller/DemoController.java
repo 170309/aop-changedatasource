@@ -1,5 +1,6 @@
 package org.demo.controller;
 
+import org.demo.pojo.db2.Admin;
 import org.demo.service.IDemoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,28 +17,17 @@ public class DemoController {
         return "index";
     }
 
-    @RequestMapping("in.do")
-    public void deIn(){
-        System.out.println("====================输入====================");
-    }
-
-
-    @RequestMapping("out.do")
-    public void deOut(){
-        System.out.println("====================输出====================");
-    }
-
-    @RequestMapping("service.do")
-    public void doDemoServiceMethod(){
-        String x= "xxxxxxxxxxxx";
-        demoService.demoOut(x);
-    }
-
 
     @RequestMapping("add.do")
-    public void doDemoAddServiceMethod(){
-        demoService.addUser();
-        demoService.addCategory();
+    public void add(Admin admin){
+        if(demoService.addAdmin(admin) != 0){
+            System.out.println("插入成功");
+        };
+    }
+
+    @RequestMapping("query.do")
+    public void query(){
+        System.out.println(demoService.queryUser());
     }
 
 

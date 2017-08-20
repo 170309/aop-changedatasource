@@ -14,19 +14,21 @@
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
 
+
     <!--启用注解解释器-->
     <context:annotation-config/>
 
     <aop:aspectj-autoproxy proxy-target-class="true"/>
 
     <aop:config>
-        <aop:pointcut id="1" expression="execution(* org.demo.service.*.*.add*(..))"/>
+        <aop:pointcut id="query" expression="execution(* org.demo.service.*.*.query*(..))"/>
+        <aop:pointcut id="add" expression="execution(* org.demo.service.*.*.add*(..))"/>
         <aop:aspect id="2" ref="demoAspect" order="0">
-            <aop:before method="logAddB" pointcut-ref="1"/>
+            <aop:before method="logAddB" pointcut-ref="query"/>
+            <aop:before method="logAddB" pointcut-ref="add"/>
         </aop:aspect>
     </aop:config>
 
-    <!--<import resource="classpath:config/spring-dataSource.xml"/>-->
-
+    <import resource="classpath:config/spring-dataSource.xml"/>
 
 </beans>

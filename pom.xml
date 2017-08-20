@@ -150,6 +150,13 @@
             <version>2.3</version>
         </dependency>
 
+        <!--alibaba Druid连接池库-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.0.5</version>
+        </dependency>
+
 
         <!-- id加密解密 -->
         <dependency>
