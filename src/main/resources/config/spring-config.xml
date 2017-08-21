@@ -23,9 +23,9 @@
     <aop:config>
         <aop:pointcut id="query" expression="execution(* org.demo.service.*.*.query*(..))"/>
         <aop:pointcut id="add" expression="execution(* org.demo.service.*.*.add*(..))"/>
-        <aop:aspect id="2" ref="demoAspect" order="0">
-            <aop:before method="logAddB" pointcut-ref="query"/>
-            <aop:before method="logAddB" pointcut-ref="add"/>
+        <aop:aspect id="2" ref="dynamicDataSourceAspect" order="0">
+            <aop:before method="dynamicDataSource" pointcut-ref="query"/>
+            <aop:before method="dynamicDataSource" pointcut-ref="add"/>
         </aop:aspect>
     </aop:config>
 

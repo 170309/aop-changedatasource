@@ -1,13 +1,13 @@
 package org.demo.service;
 
 import org.demo.pojo.db2.Admin;
-import org.demo.util.annotation.Demo;
+import org.demo.util.annotation.DataSource;
 
 public interface IDemoService {
 
-    @Demo(db = "db1")
+    @DataSource(db = "db1")
     String queryUser();
 
-    @Demo(db = "db2")
+    @DataSource(db = "db2")
     int addAdmin(Admin admin);
 }

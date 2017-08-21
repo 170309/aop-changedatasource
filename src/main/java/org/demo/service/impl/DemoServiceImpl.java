@@ -4,7 +4,7 @@ import org.demo.dao.db1.UserMapper;
 import org.demo.dao.db2.AdminMapper;
 import org.demo.pojo.db2.Admin;
 import org.demo.service.IDemoService;
-import org.demo.util.annotation.Demo;
+import org.demo.util.annotation.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,8 +28,5 @@ public class DemoServiceImpl implements IDemoService {
         System.out.println("添加Admin");
         return adminMapper.insertSelective(admin);
     }
-
-
-
 
 }

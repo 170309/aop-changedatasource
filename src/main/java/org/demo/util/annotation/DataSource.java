@@ -9,6 +9,6 @@ import java.lang.annotation.*;
 @Target({ElementType.METHOD,ElementType.TYPE})
 @Documented
 @Component
-public @interface Demo {
+public @interface DataSource {
     String db() default "";
 }
